@@ -25,7 +25,7 @@ class SortedLinkedList
     protected function insertInternal(SortedLinkedListElement $element, int|string $value): SortedLinkedListElement
     {
         $stringValue = (string)$value;
-        if ($stringValue < $element->previousElement->getValueAsString()) {
+        if (strcmp($stringValue, $element->previousElement->getValueAsString()) > 0) {
             if ($element->previousElement != null) {
                 return $this->insertInternal($element->previousElement, $value);
             }
@@ -42,7 +42,7 @@ class SortedLinkedList
     public function toArray(): array
     {
         $array = [];
-        $this->createArray($array,$this->rootElement);
+        $this->createArray($array, $this->rootElement);
         return $array;
     }
 
@@ -57,7 +57,7 @@ class SortedLinkedList
         }
     }
 
-    public function print():void
+    public function print(): void
     {
         $list = $this->toArray();
         foreach ($list as $value) {
