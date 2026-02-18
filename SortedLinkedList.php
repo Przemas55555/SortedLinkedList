@@ -47,7 +47,7 @@ class SortedLinkedList
         return $array;
     }
 
-    private function createArray(array &$array, SortedLinkedListElement $element)
+    private function createArray(array &$array, SortedLinkedListElement $element): void
     {
         if ($element->previousElement != null) {
             $this->createArray($array, $element->previousElement);
