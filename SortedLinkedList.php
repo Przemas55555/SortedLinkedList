@@ -58,7 +58,7 @@ class SortedLinkedList
         }
     }
 
-    public function print()
+    public function print():void
     {
         $list = $this->toArray();
         foreach ($list as $value) {
