@@ -30,7 +30,6 @@ class SortedLinkedList
                 return $this->insertInternal($element->previousElement, $value);
             }
             return $element->previousElement = SortedLinkedListElement::createLinkedListElement($value);
-
         }
 
         if ($element->nextElement != null) {
